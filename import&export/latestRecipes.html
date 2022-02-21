@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Recipes</title>
+    <script src="https://kit.fontawesome.com/fa650845c0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/latest.css"/>
+    <link rel="stylesheet" href="styles/nav.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="nav-container"></div>
+    
+    <h2 style="text-align:center">LATEST RECIPES</h2>
+    <div id="data"></div>
+</body>
+</html>
+
+<script type="module">
+
+import navbar from "./components/nav.js"
+
+import {getData1,appendData1} from "./scripts/dataFunction.js"
+
+let nav_bar = document.querySelector("#nav-container");
+
+nav_bar.innerHTML= navbar();
+
+let parent = document.querySelector("#data");
+
+let url="https://themealdb.com/api/json/v1/1/filter.php?c=Seafood"
+let res = await getData1(url);
+// let data = await res.json();
+
+
+appendData1(res,parent)
+
+</script>

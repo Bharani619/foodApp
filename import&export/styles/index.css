@@ -1,0 +1,24 @@
+#data{
+    margin-top:10px;
+    display: grid;
+    grid-template-columns: repeat(4,250px);
+    grid-gap:20px;
+    justify-content: center;
+}
+#data div{
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+#data img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#contentTitle{
+    text-align: center;
+}
+#data div:hover{
+    transform:scale(1.1);
+    transition:0.2s;
+}

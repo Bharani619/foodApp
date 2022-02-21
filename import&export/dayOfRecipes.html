@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day of the recipe</title>
+    <script src="https://kit.fontawesome.com/fa650845c0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/nav.css"/>
+    <link rel="stylesheet" href="styles/dayOfReceipe.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="nav-container"></div>
+    
+    <h2 id="contentTitle"></h2>
+    <div id="data"></div>
+</body>
+</html>
+
+<script type="module">
+
+    import navbar from "./components/nav.js"
+
+    import {getData2,appendData2} from "./scripts/dataFunction.js"
+
+    let nav_bar = document.querySelector("#nav-container");
+    nav_bar.innerHTML= navbar();
+
+
+    let parent = document.querySelector("#data");
+    let url ="https://themealdb.com/api/json/v1/1/random.php"
+    let res = await getData2(url);
+
+    appendData2(res,parent)
+
+    // let 
+
+</script>
